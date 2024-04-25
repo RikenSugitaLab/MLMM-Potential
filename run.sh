@@ -20,5 +20,5 @@ rm run_*.dcd
 rm run.rst
 rm -r  production.*
 
-mpiexec -n 32 -npernode 2 -x OMP_NUM_THREADS=8 --report-bindings ${bindir}/atdyn run.inp > rp1.log : -n 32 -npernode 2 python ./server/main.py --cuda './model_more_window.pt' 6 'float32' 40001 --ngpu 32 --npergpu 1 --n_replica 32 --max_order 3 --fully_connected
+mpiexec -n 32 -npernode 2 -x OMP_NUM_THREADS=8 ${bindir}/atdyn run.inp > rp1.log : -n 32 -npernode 2 python ./server/main.py --cuda './model.pt' 6 'float32' 40001 --ngpu 2 --npergpu 1 --n_replica 2 --max_order 3 --fully_connected
 echo "start"
