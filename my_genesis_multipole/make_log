@@ -1,0 +1,250 @@
+Making all in src
+make[1]: Entering directory `/home/yklei/software/my_genesis_multipole/src'
+(CDPATH="${ZSH_VERSION+.}:" && cd .. && /bin/sh /home/yklei/software/my_genesis_multipole/missing autoheader)
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+rm -f stamp-h1
+touch config.h.in
+cd .. && /bin/sh ./config.status src/config.h
+config.status: creating src/config.h
+config.status: src/config.h is unchanged
+make  all-recursive
+make[2]: Entering directory `/home/yklei/software/my_genesis_multipole/src'
+Making all in lib
+make[3]: Entering directory `/home/yklei/software/my_genesis_multipole/src/lib'
+fpp  -DHAVE_CONFIG_H constants.fpp constants.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c constants.f90
+fpp  -DHAVE_CONFIG_H mpi_parallel.fpp mpi_parallel.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c mpi_parallel.f90
+fpp  -DHAVE_CONFIG_H messages.fpp messages.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c messages.f90
+fpp  -DHAVE_CONFIG_H random.fpp random.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c random.f90
+fpp  -DHAVE_CONFIG_H atom_libs.fpp atom_libs.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c atom_libs.f90
+fpp  -DHAVE_CONFIG_H math_libs.fpp math_libs.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c math_libs.f90
+fpp  -DHAVE_CONFIG_H string.fpp string.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c string.f90
+fpp  -DHAVE_CONFIG_H table_libs.fpp table_libs.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c table_libs.f90
+fpp  -DHAVE_CONFIG_H timers.fpp timers.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c timers.f90
+fpp  -DHAVE_CONFIG_H nbond_list.fpp nbond_list.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c nbond_list.f90
+fpp  -DHAVE_CONFIG_H ffte_fft235.fpp ffte_fft235.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c ffte_fft235.f90
+fpp  -DHAVE_CONFIG_H ffte_kernel.fpp ffte_kernel.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c ffte_kernel.f90
+fpp  -DHAVE_CONFIG_H ffte_zfft1d.fpp ffte_zfft1d.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c ffte_zfft1d.f90
+fpp  -DHAVE_CONFIG_H ffte_pzfft3dv.fpp ffte_pzfft3dv.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c ffte_pzfft3dv.f90
+fpp  -DHAVE_CONFIG_H ffte_pdzfft3d.fpp ffte_pdzfft3d.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c ffte_pdzfft3d.f90
+fpp  -DHAVE_CONFIG_H ffte_pzdfft3d.fpp ffte_pzdfft3d.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c ffte_pzdfft3d.f90
+fpp  -DHAVE_CONFIG_H fft3d.fpp fft3d.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fft3d.f90
+fpp  -DHAVE_CONFIG_H fileio.fpp fileio.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio.f90
+fpp  -DHAVE_CONFIG_H fileio_control.fpp fileio_control.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_control.f90
+fpp  -DHAVE_CONFIG_H fileio_data.fpp fileio_data.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_data.f90
+depbase=`echo fileio_data_.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+mpicc -DHAVE_CONFIG_H -I. -I../../src     -O3 -ip -axCORE-AVX2  -qopenmp -MT fileio_data_.o -MD -MP -MF $depbase.Tpo -c -o fileio_data_.o fileio_data_.c &&\
+mv -f $depbase.Tpo $depbase.Po
+fpp  -DHAVE_CONFIG_H fileio_pdb.fpp fileio_pdb.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_pdb.f90
+fpp  -DHAVE_CONFIG_H fileio_crd.fpp fileio_crd.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_crd.f90
+fpp  -DHAVE_CONFIG_H fileio_top.fpp fileio_top.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_top.f90
+fpp  -DHAVE_CONFIG_H fileio_par.fpp fileio_par.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_par.f90
+fpp  -DHAVE_CONFIG_H fileio_str.fpp fileio_str.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_str.f90
+fpp  -DHAVE_CONFIG_H fileio_gpr.fpp fileio_gpr.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_gpr.f90
+fpp  -DHAVE_CONFIG_H fileio_psf.fpp fileio_psf.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_psf.f90
+fpp  -DHAVE_CONFIG_H fileio_rst.fpp fileio_rst.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_rst.f90
+fpp  -DHAVE_CONFIG_H fileio_prmtop.fpp fileio_prmtop.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_prmtop.f90
+fpp  -DHAVE_CONFIG_H fileio_ambcrd.fpp fileio_ambcrd.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_ambcrd.f90
+fpp  -DHAVE_CONFIG_H fileio_gropp.fpp fileio_gropp.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_gropp.f90
+fpp  -DHAVE_CONFIG_H fileio_grotop.fpp fileio_grotop.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_grotop.f90
+fpp  -DHAVE_CONFIG_H fileio_grocrd.fpp fileio_grocrd.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_grocrd.f90
+fpp  -DHAVE_CONFIG_H fileio_mode.fpp fileio_mode.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_mode.f90
+fpp  -DHAVE_CONFIG_H fileio_eef1.fpp fileio_eef1.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_eef1.f90
+fpp  -DHAVE_CONFIG_H fileio_sit.fpp fileio_sit.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_sit.f90
+fpp  -DHAVE_CONFIG_H fileio_mrc.fpp fileio_mrc.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_mrc.f90
+fpp  -DHAVE_CONFIG_H fileio_localres.fpp fileio_localres.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_localres.f90
+fpp  -DHAVE_CONFIG_H fileio_rstmep.fpp fileio_rstmep.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_rstmep.f90
+fpp  -DHAVE_CONFIG_H fileio_spot.fpp fileio_spot.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_spot.f90
+fpp  -DHAVE_CONFIG_H hardwareinfo.fpp hardwareinfo.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c hardwareinfo.f90
+depbase=`echo dSFMT/dSFMT.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+mpicc -DHAVE_CONFIG_H -I. -I../../src     -O3 -ip -axCORE-AVX2  -qopenmp -MT dSFMT/dSFMT.o -MD -MP -MF $depbase.Tpo -c -o dSFMT/dSFMT.o dSFMT/dSFMT.c &&\
+mv -f $depbase.Tpo $depbase.Po
+dSFMT/dSFMT.c(560): (col. 35) remark: dsfmt_chk_init_by_array has been targeted for automatic cpu dispatch
+dSFMT/dSFMT.c(531): (col. 71) remark: dsfmt_chk_init_gen_rand has been targeted for automatic cpu dispatch
+depbase=`echo dSFMT/dSFMT_if.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+mpicc -DHAVE_CONFIG_H -I. -I../../src     -O3 -ip -axCORE-AVX2  -qopenmp -MT dSFMT/dSFMT_if.o -MD -MP -MF $depbase.Tpo -c -o dSFMT/dSFMT_if.o dSFMT/dSFMT_if.c &&\
+mv -f $depbase.Tpo $depbase.Po
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c -o Lbfgsb.3.0/lbfgsb.o Lbfgsb.3.0/lbfgsb.f 
+fpp  -DHAVE_CONFIG_H molecules_str.fpp molecules_str.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c molecules_str.f90
+fpp  -DHAVE_CONFIG_H select_atoms_str.fpp select_atoms_str.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c select_atoms_str.f90
+fpp  -DHAVE_CONFIG_H fitting_str.fpp fitting_str.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fitting_str.f90
+fpp  -DHAVE_CONFIG_H molecules.fpp molecules.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c molecules.f90
+fpp  -DHAVE_CONFIG_H dihedral_libs.fpp dihedral_libs.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c dihedral_libs.f90
+fpp  -DHAVE_CONFIG_H select_lexer.fpp select_lexer.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c select_lexer.f90
+fpp  -DHAVE_CONFIG_H select_parser.fpp select_parser.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c select_parser.f90
+fpp  -DHAVE_CONFIG_H select_contacts.fpp select_contacts.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c select_contacts.f90
+fpp  -DHAVE_CONFIG_H select_atoms.fpp select_atoms.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c select_atoms.f90
+fpp  -DHAVE_CONFIG_H select.fpp select.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c select.f90
+fpp  -DHAVE_CONFIG_H fitting.fpp fitting.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fitting.f90
+fpp  -DHAVE_CONFIG_H fileio_minfo.fpp fileio_minfo.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c fileio_minfo.f90
+fpp  -DHAVE_CONFIG_H structure_check.fpp structure_check.f90
+mpif90  -I. -I../../src  -I. -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c structure_check.f90
+ar  cr lib.a constants.o mpi_parallel.o messages.o random.o atom_libs.o math_libs.o string.o table_libs.o timers.o nbond_list.o ffte_fft235.o ffte_kernel.o ffte_zfft1d.o ffte_pzfft3dv.o ffte_pdzfft3d.o ffte_pzdfft3d.o fft3d.o fileio.o fileio_control.o fileio_data.o fileio_data_.o fileio_pdb.o fileio_crd.o fileio_top.o fileio_par.o fileio_str.o fileio_gpr.o fileio_psf.o fileio_rst.o fileio_prmtop.o fileio_ambcrd.o fileio_gropp.o fileio_grotop.o fileio_grocrd.o fileio_mode.o fileio_eef1.o fileio_sit.o fileio_mrc.o fileio_localres.o fileio_rstmep.o fileio_spot.o hardwareinfo.o dSFMT/dSFMT.o dSFMT/dSFMT_if.o Lbfgsb.3.0/lbfgsb.o molecules_str.o select_atoms_str.o fitting_str.o molecules.o dihedral_libs.o select_lexer.o select_parser.o select_contacts.o select_atoms.o select.o fitting.o fileio_minfo.o structure_check.o
+make[3]: Leaving directory `/home/yklei/software/my_genesis_multipole/src/lib'
+Making all in atdyn
+make[3]: Entering directory `/home/yklei/software/my_genesis_multipole/src/atdyn'
+Making all in ../lib
+make[4]: Entering directory `/home/yklei/software/my_genesis_multipole/src/lib'
+make[4]: Nothing to be done for `all'.
+make[4]: Leaving directory `/home/yklei/software/my_genesis_multipole/src/lib'
+Making all in .
+make[4]: Entering directory `/home/yklei/software/my_genesis_multipole/src/atdyn'
+fpp  -DHAVE_CONFIG_H at_energy_str.fpp at_energy_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_energy_str.f90
+fpp  -DHAVE_CONFIG_H at_enefunc_str.fpp at_enefunc_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_enefunc_str.f90
+fpp  -DHAVE_CONFIG_H at_pairlist_str.fpp at_pairlist_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_pairlist_str.f90
+fpp  -DHAVE_CONFIG_H at_boundary_str.fpp at_boundary_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_boundary_str.f90
+fpp  -DHAVE_CONFIG_H at_constraints_str.fpp at_constraints_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_constraints_str.f90
+fpp  -DHAVE_CONFIG_H at_experiments_str.fpp at_experiments_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_experiments_str.f90
+fpp  -DHAVE_CONFIG_H at_restraints_str.fpp at_restraints_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_restraints_str.f90
+fpp  -DHAVE_CONFIG_H at_ensemble_str.fpp at_ensemble_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_ensemble_str.f90
+fpp  -DHAVE_CONFIG_H at_dynvars_str.fpp at_dynvars_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_dynvars_str.f90
+fpp  -DHAVE_CONFIG_H at_dynamics_str.fpp at_dynamics_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_dynamics_str.f90
+fpp  -DHAVE_CONFIG_H at_minimize_str.fpp at_minimize_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_minimize_str.f90
+fpp  -DHAVE_CONFIG_H at_vibration_str.fpp at_vibration_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_vibration_str.f90
+fpp  -DHAVE_CONFIG_H at_output_str.fpp at_output_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_output_str.f90
+fpp  -DHAVE_CONFIG_H at_remd_str.fpp at_remd_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_remd_str.f90
+fpp  -DHAVE_CONFIG_H at_rpath_str.fpp at_rpath_str.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_rpath_str.f90
+depbase=`echo sockets.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+mpicc -DHAVE_CONFIG_H -I. -I../../src     -O3 -ip -axCORE-AVX2  -qopenmp -MT sockets.o -MD -MP -MF $depbase.Tpo -c -o sockets.o sockets.c &&\
+mv -f $depbase.Tpo $depbase.Po
+fpp  -DHAVE_CONFIG_H at_fsocket.fpp at_fsocket.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_fsocket.f90
+fpp  -DHAVE_CONFIG_H at_driver.fpp at_driver.f90
+mpif90  -I. -I../../src  -I../lib -xHost -O3 -ip -mkl=parallel  -assume byterecl -qopenmp  -c at_driver.f90
+at_driver.fpp(83): error #6460: This is not a field name that is defined in the encompassing structure.   [T0]
+      smg(dof+1:dof+qmmm%qm_natoms) = qmmm%T0
+-------------------------------------------^
+at_driver.fpp(84): error #6460: This is not a field name that is defined in the encompassing structure.   [T1]
+      smg(dof+1+qmmm%qm_natoms:dof+qmmm%qm_natoms+dof) = reshape(qmmm%T1, [dof])
+----------------------------------------------------------------------^
+at_driver.fpp(84): error #6361: An array-valued argument is required in this context.   [RESHAPE]
+      smg(dof+1+qmmm%qm_natoms:dof+qmmm%qm_natoms+dof) = reshape(qmmm%T1, [dof])
+-----------------------------------------------------------------^
+at_driver.fpp(87): error #6460: This is not a field name that is defined in the encompassing structure.   [T2]
+        smg(dof+1+qmmm%qm_natoms+dof:dof+qmmm%qm_natoms+dof+dof*3) = reshape(qmmm%T2, [dof*3])
+----------------------------------------------------------------------------------^
+at_driver.fpp(87): error #6361: An array-valued argument is required in this context.   [RESHAPE]
+        smg(dof+1+qmmm%qm_natoms+dof:dof+qmmm%qm_natoms+dof+dof*3) = reshape(qmmm%T2, [dof*3])
+-----------------------------------------------------------------------------^
+at_driver.fpp(91): error #6460: This is not a field name that is defined in the encompassing structure.   [T3]
+        smg(dof+1+qmmm%qm_natoms+dof+dof*3:dof+qmmm%qm_natoms+dof+dof*3+dof*9) = reshape(qmmm%T3, [dof*9])
+----------------------------------------------------------------------------------------------^
+at_driver.fpp(91): error #6361: An array-valued argument is required in this context.   [RESHAPE]
+        smg(dof+1+qmmm%qm_natoms+dof+dof*3:dof+qmmm%qm_natoms+dof+dof*3+dof*9) = reshape(qmmm%T3, [dof*9])
+-----------------------------------------------------------------------------------------^
+at_driver.fpp(131): error #6460: This is not a field name that is defined in the encompassing structure.   [T0_GRAD]
+                  qmmm%T0_grad = rmg(dof+2+qmmm%qm_natoms:dof+1+2*qmmm%qm_natoms)
+-----------------------^
+at_driver.fpp(131): error #6366: The shapes of the array expressions do not conform.   [T0_GRAD]
+                  qmmm%T0_grad = rmg(dof+2+qmmm%qm_natoms:dof+1+2*qmmm%qm_natoms)
+-----------------------^
+at_driver.fpp(132): error #6460: This is not a field name that is defined in the encompassing structure.   [T1_GRAD]
+                  qmmm%T1_grad = rmg(dof+2+2*qmmm%qm_natoms:dof+1+2*qmmm%qm_natoms+dof)
+-----------------------^
+at_driver.fpp(132): error #6366: The shapes of the array expressions do not conform.   [T1_GRAD]
+                  qmmm%T1_grad = rmg(dof+2+2*qmmm%qm_natoms:dof+1+2*qmmm%qm_natoms+dof)
+-----------------------^
+at_driver.fpp(135): error #6460: This is not a field name that is defined in the encompassing structure.   [T2_GRAD]
+                    qmmm%T2_grad = rmg(dof+2+2*qmmm%qm_natoms+dof:dof+1+2*qmmm%qm_natoms+dof+3*dof)
+-------------------------^
+at_driver.fpp(135): error #6366: The shapes of the array expressions do not conform.   [T2_GRAD]
+                    qmmm%T2_grad = rmg(dof+2+2*qmmm%qm_natoms+dof:dof+1+2*qmmm%qm_natoms+dof+3*dof)
+-------------------------^
+at_driver.fpp(139): error #6460: This is not a field name that is defined in the encompassing structure.   [T3_GRAD]
+                    qmmm%T3_grad = rmg(dof+2+2*qmmm%qm_natoms+4*dof:rmg_size)
+-------------------------^
+at_driver.fpp(139): error #6366: The shapes of the array expressions do not conform.   [T3_GRAD]
+                    qmmm%T3_grad = rmg(dof+2+2*qmmm%qm_natoms+4*dof:rmg_size)
+-------------------------^
+compilation aborted for at_driver.f90 (code 1)
+make[4]: *** [at_driver.o] Error 1
+make[4]: Leaving directory `/home/yklei/software/my_genesis_multipole/src/atdyn'
+make[3]: *** [all-recursive] Error 1
+make[3]: Leaving directory `/home/yklei/software/my_genesis_multipole/src/atdyn'
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory `/home/yklei/software/my_genesis_multipole/src'
+make[1]: *** [all] Error 2
+make[1]: Leaving directory `/home/yklei/software/my_genesis_multipole/src'
+make: *** [all-recursive] Error 1
