@@ -11,8 +11,10 @@ model:
       cutoff: 3
       basis_func: gaussian
       cutoff_network: MollifierCutoff
-      cross_product: true
-      if_Tensor_Interaction: True
+      do_graph_norm: false
+      graph_rep: false
+      cross_product: false
+      if_Tensor_Interaction: true
       aggregator_mode: sum
       LODE: True
       gamma: 0.5
@@ -34,15 +36,18 @@ model:
   wl2: 1e-11
   mbis: False
   total_charge: -1.0
-  train_total_energy: false
+  train_total_energy: true
   reference_model: True
 data:
   Dataset:
     class_path: mlmm.dataset.mydataset
     init_args:
-      datafile: /home/yklei/Dataset/SN2/training/data_new_force.filelist
+      datafile: /home/yklei/Dataset/SN2/training/data_new_total_force.filelist
       top: /home/yklei/Dataset/SN2/2_system/snapshot10.psf
-      label_file: /home/yklei/Dataset/SN2/label_dft3.h5
+      label_file: /home/yklei/Dataset/SN2/label_dft_simple.h5
+      #label_file: './label_dft_test.h5'
+      #datafile: 'dft_test.dcd'
+      # label_file: /home/yklei/practice/mlmm_energy/test/label_dft.h5
       select_group: index 0:5
       full_connected: true
       in_memory: False
@@ -73,7 +78,7 @@ trainer:
       init_args:
         every_n_epochs: 1
         save_on_train_epoch_end: True
-  default_root_dir: ./update_last
+  default_root_dir: ./SN2_kmax3_new
   gradient_clip_val: null
   gradient_clip_algorithm: null
   num_nodes: 1
@@ -94,7 +99,7 @@ trainer:
   accumulate_grad_batches: null
   max_epochs: 600
   min_epochs: null
-  max_steps: -1
+  max_steps: 600000
   min_steps: null
   max_time: null
   limit_train_batches: 1.0
