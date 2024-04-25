@@ -1,4 +1,6 @@
-# MLMM-Potential
+================================
+  MLMM-Potential Repository README
+================================
 This program is used to fit QM/MM potential to get a accurate and transferrable Machine Learning Force Field. 
 
 mlmm: package of network.
