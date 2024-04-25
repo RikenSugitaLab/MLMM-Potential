@@ -10,8 +10,8 @@ scripts_for_prepare_data: python program used to extract reference force, energy
 # Required Library:
 Intall by pip install -r requirements.txt
 
-pytorch<=2.0.0
-pytorch_lightning<=2.0.0
-MDAnalysis
-mpi4py
+pytorch<=2.0.0  
+pytorch_lightning<=2.0.0  
+MDAnalysis  
+mpi4py  
 dgl
