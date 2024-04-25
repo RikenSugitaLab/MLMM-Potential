@@ -14,7 +14,7 @@ This program is used to fit QM/MM potential to get a accurate and transferrable 
 
 # Required Library:
 pytorch<2.0.0  
-pytorch_lightning<2.0.0  
+pytorch_lightning<2.0.0 (with CLI function)    
 MDAnalysis  
 mpi4py  
 dgl  
