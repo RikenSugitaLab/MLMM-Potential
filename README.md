@@ -19,5 +19,8 @@ MDAnalysis
 mpi4py  
 dgl  
 dask  
+netCDF4  
+numpy  
+h5py  
 
 Intall by pip install -r requirements.txt
