@@ -8,7 +8,6 @@ from torch.autograd import Variable
 import numpy as np
 from mlmm.utils.utils import write_data, compute_interacton_tensor,compute_mm_analytical_grad
 from mlmm.opt.diffmod import DiffMod
-# from MDAnalysis.transformations.rotate import rotateby
 from mlmm.dataset.mydataset_alphachem import CONV_UNIT_ENE, CONV_UNIT_FORCE, CONV_UNIT_LEN
 
 __all__ = ['LitMLMM']

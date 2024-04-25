@@ -22,7 +22,6 @@ import glob
 import h5py
 import re
 from MDAnalysis.lib.NeighborSearch import AtomNeighborSearch
-from memory_profiler import profile
 import psutil
 
 def get_current_memory_gb():

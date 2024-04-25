@@ -334,8 +334,9 @@ def read_label_data(dirlist,outfile='label.h5py',dcdfile=None,topfile=None,inter
     #if link_charge.sum() != 0 :
     #    if not store_nc:
     #        raise Exception('when there is link atoms, store_nc should be set to true')
-    data['link_charge'] = link_charge[:,:,2:]
-    data['link_force'] = link_force[:,:,2:]
+    if link_charge.sum() != 0 :
+        data['link_charge'] = link_charge[:,:,2:]
+        data['link_force'] = link_force[:,:,2:]
 
     label = {}
     multipole = list(zip(*multipole))
@@ -466,15 +467,15 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
 
     ### params ###
-    parser.add_argument("--dir",type=str)
-    parser.add_argument("--trj",type=str)
-    parser.add_argument("--top",type=str)
-    parser.add_argument("--outfile",type=str)
-    parser.add_argument("--drop_first",action='store_true',default=False)
-    parser.add_argument("--store_nc",action='store_true',default=False)
-    parser.add_argument("--ref_model",type=int, default=0)
-    parser.add_argument("--interval",type=int,default=1)
-    parser.add_argument("--linkbond",type=float,default=1.0)
+    parser.add_argument("--dir",type=str, help="directory containting *.qminfo file output from genesis")
+    parser.add_argument("--trj",type=str, help="trajectory file")
+    parser.add_argument("--top",type=str, help="psf file")
+    parser.add_argument("--outfile",type=str, help="the name output h5 file")
+    parser.add_argument("--drop_first",action='store_true',default=False,help="whether job0.qminfo will be processed" )
+    parser.add_argument("--store_nc",action='store_true',default=False, help="whether store coordinate and force into nc file")
+    parser.add_argument("--ref_model",type=int, default=0, help="whether calculate energy and force from coloumb model, 0 is yes, -1 is no")
+    parser.add_argument("--interval",type=int,default=1, help="interval for processing qminfo file, when (frame idx)%inteval==0 the corresponding qminfo file will processed")
+    parser.add_argument("--linkbond",type=float,default=1.0, help="bond lenght of link bond")
     parser.add_argument("--logfile",type=str,default='log')
 
     args = parser.parse_args()

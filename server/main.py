@@ -10,7 +10,6 @@ import logging
 import time
 from mpi4py import MPI
 import os
-from pyinstrument import Profiler
 import h5py
 
 def write_data(filename,data):
