@@ -1,0 +1,127 @@
+model:
+  rep_model:
+    class_path: mlmm.representation.FieldNet
+    init_args:
+      n_interactions: 6
+      n_atom_basis: 256
+      n_filters: 256
+      n_basis: 128
+      dipole_features: 256
+      max_z: 100
+      cutoff: 3
+      basis_func: gaussian
+      cutoff_network: MollifierCutoff
+      cross_product: true
+      if_Tensor_Interaction: True
+      aggregator_mode: sum
+      LODE: True
+      gamma: 0.5
+      delta: 5.0
+  out_model:
+    class_path: mlmm.ReadOut.ReadOut_ML2
+    init_args:
+      outdim_v: 0
+      outdim_s: 1
+      m_max_order: 0
+      #outdim_local: 1
+      #outdim_global: 1
+      activation: swish
+      n_layers: 2
+      pooling: sumpooling
+      spectral_norm: true
+  wf: 36e0
+  wq: 1e-1
+  wl2: 1e-11
+  mbis: False
+  total_charge: -1.0
+  train_total_energy: false
+  reference_model: True
+data:
+  Dataset:
+    class_path: mlmm.dataset.mydataset
+    init_args:
+      datafile: /home/yklei/Dataset/SN2/training/data_new_force.filelist
+      top: /home/yklei/Dataset/SN2/2_system/snapshot10.psf
+      label_file: /home/yklei/Dataset/SN2/label_dft3.h5
+      select_group: index 0:5
+      full_connected: true
+      in_memory: False
+      force_field_type: false
+      add_self_loop: false
+      if_compute_elec: true
+      n_atom_mm_max: 830
+      sharing_data: True
+      analytical_grad: False
+      T_max_order: 3
+  batch_size: 32
+  frac_list: 
+  - 1.0
+  - 0.0
+  num_workers: 6
+  persistent_workers: True
+  pin_memory: True
+optimizer:
+  class_path: torch.optim.Adam
+  init_args:
+    lr: 0.0001
+seed_everything: 930329
+trainer:
+  logger: true
+  enable_checkpointing: true
+  callbacks: 
+    - class_path: pytorch_lightning.callbacks.ModelCheckpoint
+      init_args:
+        every_n_epochs: 1
+        save_on_train_epoch_end: True
+  default_root_dir: ./update_last
+  gradient_clip_val: null
+  gradient_clip_algorithm: null
+  num_nodes: 1
+  devices: 
+  - 0
+  - 1
+  - 2
+  - 3
+  gpus: Null
+  auto_select_gpus: true
+  tpu_cores: null
+  ipus: null
+  enable_progress_bar: true
+  overfit_batches: 0.0
+  track_grad_norm: -1
+  check_val_every_n_epoch: 600
+  fast_dev_run: false
+  accumulate_grad_batches: null
+  max_epochs: 600
+  min_epochs: null
+  max_steps: -1
+  min_steps: null
+  max_time: null
+  limit_train_batches: 1.0
+  limit_val_batches: 1.0
+  limit_test_batches: 1.0
+  limit_predict_batches: 1.0
+  val_check_interval: 1.0
+  log_every_n_steps: 10
+  accelerator: gpu
+  strategy: ddp
+  sync_batchnorm: false
+  precision: 32
+  enable_model_summary: true
+  weights_save_path: null
+  num_sanity_val_steps: 0
+  resume_from_checkpoint: null
+  profiler: null
+  benchmark: false
+  deterministic: false
+  reload_dataloaders_every_n_epochs: 0
+  auto_lr_find: false
+  replace_sampler_ddp: true
+  detect_anomaly: False
+  auto_scale_batch_size: false
+  plugins: null
+  amp_backend: native
+  amp_level: null
+  move_metrics_to_cpu: false
+  multiple_trainloader_mode: max_size_cycle
+ckpt_path: null
