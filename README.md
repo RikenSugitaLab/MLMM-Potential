@@ -8,10 +8,10 @@ my_genesis_multipole: modified version of genesis used for simulation with ML le
 scripts_for_prepare_data: python program used to extract reference force, energy and charge from output of genesis
 
 # Required Library:
-Intall by pip install -r requirements.txt
-
 pytorch<=2.0.0  
 pytorch_lightning<=2.0.0  
 MDAnalysis  
 mpi4py  
-dgl
+dgl  
+
+Intall by pip install -r requirements.txt
