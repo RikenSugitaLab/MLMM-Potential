@@ -27,9 +27,9 @@ pmda
 Intall by pip install -r requirements.txt
 
 # Usage
-**training**: shown in run_traning.sh (more details can be found in website of pytorch lightning)  
-**simulation**: copy server folder into working directory and put mlmm package into server folder. Then run simulation according to run.sh  
-Detailed explanation on options can be found in doc (in preparation)
+**training**: shown in run_traning.sh (more details can be found in website of pytorch lightning).  
+**simulation**: copy server folder into working directory and put mlmm package into server folder. Then run simulation according to run.sh.  
+Detailed explanation on options can be found in doc (in preparation).
 
 # Notes
 For the time being, the validate and predict function can't not be used. To generate prediction of any conformation, please store it into dcd format and use energy_analysis module in genesis to get the prediction.
