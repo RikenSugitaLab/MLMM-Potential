@@ -18,5 +18,6 @@ pytorch_lightning<=2.0.0
 MDAnalysis  
 mpi4py  
 dgl  
+dask  
 
 Intall by pip install -r requirements.txt
