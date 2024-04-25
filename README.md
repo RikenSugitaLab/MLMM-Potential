@@ -22,5 +22,6 @@ dask
 netCDF4  
 numpy  
 h5py  
+pmda  
 
 Intall by pip install -r requirements.txt
