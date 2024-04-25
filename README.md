@@ -25,3 +25,7 @@ h5py
 pmda  
 
 Intall by pip install -r requirements.txt
+
+# Usage
+**training**: shown in run_traning.sh (more details can be found in website of pytorch lightning)
+**simulation**: copy server into working directory and put mlmm package into server folder. Then run simulation according to run.sh
