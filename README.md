@@ -13,8 +13,8 @@ This program is used to fit QM/MM potential to get a accurate and transferrable 
 **mlmm_main_pl.py**: main program file for training  
 
 # Required Library:
-pytorch<=2.0.0  
-pytorch_lightning<=2.0.0  
+pytorch<2.0.0  
+pytorch_lightning<2.0.0  
 MDAnalysis  
 mpi4py  
 dgl  
