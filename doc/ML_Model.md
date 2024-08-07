@@ -3,29 +3,30 @@
 ## Model Part
 wf: weight for loss term of force  
 wq: weight for loss term of charge of qm atoms  
-total_charge: the net charge of QM region  
+total_charge: the net charge of QM region. Default: 0.0
 train_total_energy: whether the total energy/force of QM region will be used for training. If it's set to false, the difference of total energy/force between couloumb energy/force calculated from QM charge output from Quantum Calculation will be used for training. Default: True  
 reference_model: Wherther couloumb energy/force calculated from predicted QM charge will be used in Readout Module. Default: True  
 
 ### rep_model:
-n_interactions: number of interaction layers  
-n_atom_basis: dimension of invariant/equivariant feature vector  
-n_filters: dimension of filtering space (commonly the same as n_atoms_basis)  
-n_basis: number of radial basis functions  
-max_z: max nuclear charge of elements in the system  
-cutoff: cutoff distance for graph convolution  
-basis_func: the radial basis function used, "gaussian" (Gaussian basis) and "sin" (Painn radial basis function)  
-cutoff_network: the type of cut off function. "MollifierCutoff" and "CosineCutoff" are available  
-do_graph_norm: whether a graph normalization layer is used at the end each interction layer. Default: False  
+n_interactions: number of interaction layers. Default: 6  
+n_atom_basis: dimension of invariant/equivariant feature vector. Default: 256  
+n_filters: dimension of filtering space (commonly the same as n_atoms_basis. Default: 256  
+n_basis: number of radial basis functions. Default: 128  
+max_z: max nuclear charge of elements in the system. Default: 100  
+cutoff: cutoff distance for graph convolution. Default: 3.0 angstrom  
+basis_func: the radial basis function used, "gaussian" (Gaussian basis) and "sin" (Painn radial basis function). Default: gaussian   
+cutoff_network: the type of cut off function. "MollifierCutoff" and "CosineCutoff" are available. Default: MollifierCutoff    
+do_graph_norm: whether a graph normalization layer is used at the end each interction layer. Default: False   
 if_Tensor_Interaction: If dipole-dipole message is used. Default: True  
 LODE: whether long-range descriptor contributed from QM atoms are considered. Default: True  
 gamma: parameter of switch function in LODE (Unit: Bohr)  
 delta: parameter of switch function in LODE (Unit: Bohr)  
+accumulate_update: Whether the update from QM atoms to long-range descriptor is accumulated. Default: False  
+activation function: the activation function used in representation module(only support "swish"). Default: swish  
 
 ### out_model:
 activation function: the activation function used in read out module (only support "shifted-plus" and "swish"). Default: swish  
-n_layers: number of hidden layers in MLP. Default: 2  
-
+n_layers: number of fully connected layers in MLP. Default: 2  
 
 ## Data Part
 batch_size: batch size  
@@ -50,8 +51,4 @@ n_atom_mm: the max number of mm atoms within sr_raidius in all the data
 n_edge_qm_max: the max number of edges in QM region in all the data  
 The two options are used to contruct data server.   
 
-## ** Please only modify the options listed in this text and leave out other ones shown in config.yml ** 
-
-
-
-
+## ** Please only modify the options listed in this text and leave out other ones shown in config.yml, other options are either experimental ones or deprecated ** 

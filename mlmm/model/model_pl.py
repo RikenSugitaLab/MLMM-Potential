@@ -16,11 +16,9 @@ class LitMLMM(pl.LightningModule):
                  wf: float,
                  wq: float,
                  wl2: float,
-                 wg: float = 0.0,
-                 wr: float = 0.0,
                  reference_model = True,
-                 train_total_energy = False,
-                 total_charge = -1.0,
+                 train_total_energy = True,
+                 total_charge = 0.0,
                  mbis: bool = True):
         super().__init__()
         self.rep_model = rep_model
@@ -30,8 +28,6 @@ class LitMLMM(pl.LightningModule):
         self.reference_model = reference_model
         self.total_charge = total_charge
 
-        if out_model.name == "gp":
-            self.mll = None
         self.pooling1 = dgl.nn.pytorch.glob.SumPooling()
         self.pooling2 = dgl.nn.pytorch.glob.AvgPooling()
 
@@ -54,8 +50,6 @@ class LitMLMM(pl.LightningModule):
         self.wf = wf
         self.wq = wq
         self.wl2 = wl2
-        self.wg = wg
-        self.wr = wr
 
     def forward(self, g, cell=None):
         results = {}
@@ -99,7 +93,6 @@ class LitMLMM(pl.LightningModule):
                     force_ext = force_ext + (g.ndata['T3'].reshape(-1,n_atom,3,3,3)*multipole['M2'][...,None]).sum(2).sum(2)/2
 
                 if 'M3' in multipole.keys() and 'T3' in g.ndata.keys() and 'T4' in g.ndata.keys():
-                    print('multipole_M3')
                     multipole['M3'] = multipole['M3'].reshape(n_frame,n_atom,3,3,3)
                     energy_ext =  energy_ext - ((multipole['M3']*g.ndata['T3'].reshape(n_frame,n_atom,3,3,3)).sum(-1).sum(-1).sum(-1).sum(-1))[:,None]/6
                     force_ext = force_ext - (g.ndata['T4'].reshape(-1,n_atom,3,3,3,3)*multipole['M3'][...,None]).sum(2).sum(2).sum(2)/6

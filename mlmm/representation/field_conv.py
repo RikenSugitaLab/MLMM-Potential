@@ -43,13 +43,13 @@ class FieldNet(nn.Module):
     """
 
     def __init__(self,
-                 n_interactions=3,
-                 n_atom_basis=100,
-                 n_filters=100,
-                 n_basis=25,
+                 n_interactions=6,
+                 n_atom_basis=256,
+                 n_filters=256,
+                 n_basis=128,
                  dipole_features=100,
                  max_z=100, 
-                 cutoff=5,
+                 cutoff=3,
                  basis_func: str = "gaussian",
                  cutoff_network='MollifierCutoff',
                  dipole_cutoff=None,
@@ -61,8 +61,8 @@ class FieldNet(nn.Module):
                  aggregator_mode:str='sum',
                  LODE = False,
                  accumulate_update=False,
-                 gamma = 0.37,
-                 delta = 0.5
+                 gamma = 0.5,
+                 delta = 5.0
                  ):
         super().__init__()
         if activation=="swish":
