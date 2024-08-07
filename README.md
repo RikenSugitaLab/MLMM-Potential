@@ -33,3 +33,6 @@ Detailed explanation on options can be found in doc (in preparation).
 
 # Notes
 For the time being, the validate and predict function can't not be used. To generate prediction of any conformation, please store it into dcd format and use energy_analysis module in genesis to get the prediction.
+
+# Citations
+Yao-Kun Lei, Kiyoshi Yagi, Yuji Sugita; Learning QM/MM potential using equivariant multiscale model. J. Chem. Phys. 160 (21): 214109. https://doi.org/10.1063/5.0205123
