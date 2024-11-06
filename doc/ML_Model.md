@@ -5,7 +5,7 @@ wf: weight for loss term of force
 wq: weight for loss term of charge of qm atoms  
 total_charge: the net charge of QM region. Default: 0.0
 train_total_energy: whether the total energy/force of QM region will be used for training. If it's set to false, the difference of total energy/force between couloumb energy/force calculated from QM charge output from Quantum Calculation will be used for training. Default: True  
-reference_model: Wherther couloumb energy/force calculated from predicted QM charge will be used in Readout Module. Default: True  
+reference_model: Wherther couloumb energy/force calculated from predicted QM charge will be used in Readout Module. when this argument is set to true, then please store the energy and force predicted by reference model (Coulomb model using QM charge derived from QM calculation) into label file (.h5), the corresponding key is ref_energy and ref_force. Default: True.
 
 ### rep_model:
 n_interactions: number of interaction layers. Default: 6  
