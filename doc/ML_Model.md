@@ -34,7 +34,7 @@ num_workers: the same option in dataloader (refer to pytorch)
 pin_memory: the same option in dataloader (refer to pytorch)  
 persistent_worker: the same option in dataloader (refer to pytorch)  
 
-# Dataset
+### Dataset
 datafile: path of trjectory file. Avaiable format: \*.filelist (a list of path of multiple trajectory files), all the format supported by MDAnalysis  
 top: path of topology file. Format: All the format supported by MDAnalysis  
 label_file: the path of label file. (hdf5)  
